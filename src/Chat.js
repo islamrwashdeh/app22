@@ -17,6 +17,7 @@ function Chat({ socket, username, room }) {
           new Date(Date.now()).getMinutes(),
           type: 'REQUEST',
         content: currentMessage,
+        contentType:'IMAGE'
       };
 
       await socket.emit("send_message", messageData);
@@ -27,6 +28,7 @@ function Chat({ socket, username, room }) {
 
   useEffect(() => {
     socket.on("receive_message", (data) => {
+      console.log("receive_message", data);
       setMessageList((list) => [...list, data]);
     });
   }, [socket]);

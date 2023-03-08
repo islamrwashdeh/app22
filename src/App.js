@@ -6,14 +6,15 @@ import Chat from "./Chat";
 const socket = io.connect("http://localhost:3005", {
   query: {
     token:
-      "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiJjbGNyYmJxMm0wMDAwdnFtczBnOWJ4dWtjIiwiZW1haWwiOiJhbmFzX2hhc2FuQGhvdG1haWwuY29tIiwicGhvbmUiOm51bGwsIm5hbWUiOiJ0ZXN0IGlmIHVzZXIgY2FuIHVwZGF0ZSBpdHMgb25lICBpbmYiLCJwYXNzd29yZCI6bnVsbCwicHJvZmlsZUltYWdlIjoiaHR0cHM6Ly9ncmFwaC5mYWNlYm9vay5jb20vNjE3Nzk2ODU5ODg5NDUwOS9waWN0dXJlP2hlaWdodD0yMDAiLCJjb3ZlckltYWdlIjpudWxsLCJicmllZiI6bnVsbCwicm9sZSI6IlVTRVIiLCJpc0Jsb2NrZWQiOmZhbHNlLCJpc0FjdGl2ZSI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyMy0wMS0xMVQwNzowMDo0My41NzhaIiwidXBkYXRlZEF0IjoiMjAyMy0wMS0xNlQwMDowMDowMC4wMDBaIn0sInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE2NzQ0MTEyMDgsImV4cCI6MTY3ODAxMTIwOH0.VrMLtQtxqqusInfM_dbZMTzPivXLxGKdwXoJbxtIKKEHIftS1M74FIcXnNacd6NAR9kv1yxCzYrSkvKDptKr7cP9rFqwRXk2L7xv2GCNHo9sy3KCyEGwfT6cqwphGh_FobRAZV94Rb4n6ZOx2vAPsISoKTTyCLwnGwshbS87-I4",
+      "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiJjbGR3NmhxbzQwMDAwdnE0YTJqc3V3aGh3IiwiZW1haWwiOiJzYW1pQG5hZHNvZnQubmV0IiwicGhvbmUiOm51bGwsIm5hbWUiOiJzYW1pIiwicGFzc3dvcmQiOm51bGwsInByb2ZpbGVJbWFnZSI6bnVsbCwiY292ZXJJbWFnZSI6bnVsbCwiYnJpZWYiOm51bGwsInJvbGUiOiJVU0VSIiwiaXNCbG9ja2VkIjpmYWxzZSwiaXNBY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjMtMDItMDhUMjE6MjM6NTkuNDI3WiIsInVwZGF0ZWRBdCI6IjIwMjMtMDItMDhUMjE6Mjg6MTguMTk1WiJ9LCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNjc2OTczMzQxLCJleHAiOjE2ODA1NzMzNDF9.U_nSMbtDAQs0PCzdMVXVerNSBU0YtAjdcmMI-M8Bas-cbSHgx5TYhp3T0aMWXevvZ8vRNX6ZphWp9MsRwAGER8-7aFTFpKenHCLYS-iw-8JumZ0xLnu77_vvAZw8w8DuR0RgDkHGWsKTpfVKQvq5AcOvPWXApH2_nzH7o60ZnIU"
   },
+  path: "/socket/",
 });
 const history = socket.on("history", (data) => {
-  console.log(data);
+  console.log("HI", data);
 });
 
-//io.connect("http://localhost:3005");
+//  const socket =io.connect("http://localhost:3005");
 
 function App() {
   const [username, setUsername] = useState("");
